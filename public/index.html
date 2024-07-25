@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Basir Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .cart {
+            cursor: pointer;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: #f4f4f4;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero button {
+            padding: 0.75rem 1.5rem;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .products {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: #fff;
+            padding: 1rem;
+            margin: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .product h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .product p {
+            margin-bottom: 1rem;
+        }
+
+        .product button {
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .product-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MyShop</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart">Cart (0)</div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to MyShop</h1>
+            <p>Your one-stop shop for all your needs</p>
+            <button>Shop Now</button>
+        </section>
+
+        <section class="products">
+            <h2>Featured Products</h2>
+            <div class="product-list">
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1618677603286-0ec56cb6e1b5?q=80&w=1922&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1">
+                    <h3>Tshirt - With Premium leather</h3>
+                    <p> ₹499</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://plus.unsplash.com/premium_photo-1690038781199-1c75a1e406c0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 2">
+                    <h3>Tshirt - With Premium cotton</h3>
+                    <p> ₹899</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 3">
+                    <h3>Tshirt - With Premium material</h3>
+                    <p> ₹1599</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BasirShop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = document.querySelector('.cart');
+            let cartCount = 0;
+
+            document.querySelectorAll('.product button').forEach(button => {
+                button.addEventListener('click', () => {
+                    cartCount++;
+                    cart.textContent = `Cart (${cartCount})`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
